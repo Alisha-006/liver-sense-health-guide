@@ -54,10 +54,18 @@ const Assessment = () => {
     setIsSubmitting(true);
     
     try {
-      // Process the form data
+      // Process the form data - Ensure all properties are included and non-optional
       const patientData: PatientData = {
-        ...values,
+        age: values.age,
         gender: values.gender as 'male' | 'female',
+        totalBilirubin: values.totalBilirubin,
+        directBilirubin: values.directBilirubin,
+        alkalinePhosphatase: values.alkalinePhosphatase,
+        alamineAminotransferase: values.alamineAminotransferase,
+        aspartateAminotransferase: values.aspartateAminotransferase,
+        totalProteins: values.totalProteins,
+        albumin: values.albumin,
+        albuminGlobulinRatio: values.albuminGlobulinRatio
       };
       
       // Get prediction result
